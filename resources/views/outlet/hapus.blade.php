@@ -1,0 +1,32 @@
+ <!-- Modal -->
+ <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete{{$value->id}}">
+    DELETE
+  </button>
+<div class="modal fade" id="delete{{$value->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">DELETE</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="card-body">
+            <p class="login-box-msg">Yakin Ingin Menghapus Data?</p>
+            <br>
+            <br>
+            <form action="outlet/{{$value->id}}" method="post">
+                @csrf
+                @method('delete')
+              <div class="input-group mb-8 justify-content-around">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">DELETE</button>
+              </div>
+              </div>
+            </form>
+          </div>
+    </div>
+  </div>
+</div>
+</div>

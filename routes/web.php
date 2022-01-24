@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\memberController;
+use App\Http\Controllers\paketController;
+use App\Http\Controllers\outletController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('layouts/index');
 });
+
+Route::resource('member', memberController::class);
+Route::resource('paket', paketController::class);
+Route::resource('outlet', outletController::class);
